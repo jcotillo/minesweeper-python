@@ -15,13 +15,13 @@ class mineSweeper:
         self.print_result()
 
     def determine_state(self):
-        if self.board.remaindingTiles == 0:
+        if self.board.remainingTiles == 0:
             self.won = True
             self.game_over = True
         elif self.board.state == -1:
             self.game_over = False
         else:
-            print "{} tiles left to uncovert to win. {} bomb still out there though".format(self.board.remaindingTiles, 9)
+            print "{} tiles left to uncovert to win. {} bomb still out there though".format(self.board.remainingTiles, 10)
 
     def user_input(self):
         print emojify(":sparkles: :sparkles: input coords :sparkles: :sparkles:")

@@ -14,12 +14,12 @@ class Board:
         self.grid = [[Tile(x,y) for y in range(COLS)] for x in range(ROWS)]
         self.place_bombs()
         self.state = 0
-        self.remaindingTiles = (ROWS * COLS) - NUM_BOMBS
+        self.remainingTiles = (ROWS * COLS) - NUM_BOMBS
 
     def play(self,x,y, flag=False):
         # flag a certain tile
         if not self.inbounds(x,y):
-            raise ValueError('Coordinates out of bound.')
+            raise ValueError('Coords out of bound.')
 
         if self.inbounds(x,y) and flag:
             self.grid[x][y].flagged = True
@@ -47,7 +47,7 @@ class Board:
                 return
 
             tile.visible = True
-            self.remaindingTiles -= 1
+            self.remainingTiles -= 1
             count = self.count_neighbors(x,y)
 
             if count > 0:
